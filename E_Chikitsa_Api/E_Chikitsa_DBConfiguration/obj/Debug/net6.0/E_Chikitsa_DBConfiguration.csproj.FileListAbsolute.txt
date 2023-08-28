@@ -1,0 +1,12 @@
+E:\Coding\E_Chikitsa_Project\E_Chikitsa_Api\E_Chikitsa_DBConfiguration\bin\Debug\net6.0\E_Chikitsa_DBConfiguration.deps.json
+E:\Coding\E_Chikitsa_Project\E_Chikitsa_Api\E_Chikitsa_DBConfiguration\bin\Debug\net6.0\E_Chikitsa_DBConfiguration.dll
+E:\Coding\E_Chikitsa_Project\E_Chikitsa_Api\E_Chikitsa_DBConfiguration\bin\Debug\net6.0\E_Chikitsa_DBConfiguration.pdb
+E:\Coding\E_Chikitsa_Project\E_Chikitsa_Api\E_Chikitsa_DBConfiguration\obj\Debug\net6.0\E_Chikitsa_DBConfiguration.csproj.AssemblyReference.cache
+E:\Coding\E_Chikitsa_Project\E_Chikitsa_Api\E_Chikitsa_DBConfiguration\obj\Debug\net6.0\E_Chikitsa_DBConfiguration.GeneratedMSBuildEditorConfig.editorconfig
+E:\Coding\E_Chikitsa_Project\E_Chikitsa_Api\E_Chikitsa_DBConfiguration\obj\Debug\net6.0\E_Chikitsa_DBConfiguration.AssemblyInfoInputs.cache
+E:\Coding\E_Chikitsa_Project\E_Chikitsa_Api\E_Chikitsa_DBConfiguration\obj\Debug\net6.0\E_Chikitsa_DBConfiguration.AssemblyInfo.cs
+E:\Coding\E_Chikitsa_Project\E_Chikitsa_Api\E_Chikitsa_DBConfiguration\obj\Debug\net6.0\E_Chikitsa_DBConfiguration.csproj.CoreCompileInputs.cache
+E:\Coding\E_Chikitsa_Project\E_Chikitsa_Api\E_Chikitsa_DBConfiguration\obj\Debug\net6.0\E_Chikitsa_DBConfiguration.dll
+E:\Coding\E_Chikitsa_Project\E_Chikitsa_Api\E_Chikitsa_DBConfiguration\obj\Debug\net6.0\refint\E_Chikitsa_DBConfiguration.dll
+E:\Coding\E_Chikitsa_Project\E_Chikitsa_Api\E_Chikitsa_DBConfiguration\obj\Debug\net6.0\E_Chikitsa_DBConfiguration.pdb
+E:\Coding\E_Chikitsa_Project\E_Chikitsa_Api\E_Chikitsa_DBConfiguration\obj\Debug\net6.0\ref\E_Chikitsa_DBConfiguration.dll

@@ -1,0 +1,12 @@
+E:\Coding\E_Chikitsa_Project\E_Chikitsa_Api\E_Chikitsa_Interfaces\bin\Debug\net6.0\E_Chikitsa_Interfaces.deps.json
+E:\Coding\E_Chikitsa_Project\E_Chikitsa_Api\E_Chikitsa_Interfaces\bin\Debug\net6.0\E_Chikitsa_Interfaces.dll
+E:\Coding\E_Chikitsa_Project\E_Chikitsa_Api\E_Chikitsa_Interfaces\bin\Debug\net6.0\E_Chikitsa_Interfaces.pdb
+E:\Coding\E_Chikitsa_Project\E_Chikitsa_Api\E_Chikitsa_Interfaces\obj\Debug\net6.0\E_Chikitsa_Interfaces.csproj.AssemblyReference.cache
+E:\Coding\E_Chikitsa_Project\E_Chikitsa_Api\E_Chikitsa_Interfaces\obj\Debug\net6.0\E_Chikitsa_Interfaces.GeneratedMSBuildEditorConfig.editorconfig
+E:\Coding\E_Chikitsa_Project\E_Chikitsa_Api\E_Chikitsa_Interfaces\obj\Debug\net6.0\E_Chikitsa_Interfaces.AssemblyInfoInputs.cache
+E:\Coding\E_Chikitsa_Project\E_Chikitsa_Api\E_Chikitsa_Interfaces\obj\Debug\net6.0\E_Chikitsa_Interfaces.AssemblyInfo.cs
+E:\Coding\E_Chikitsa_Project\E_Chikitsa_Api\E_Chikitsa_Interfaces\obj\Debug\net6.0\E_Chikitsa_Interfaces.csproj.CoreCompileInputs.cache
+E:\Coding\E_Chikitsa_Project\E_Chikitsa_Api\E_Chikitsa_Interfaces\obj\Debug\net6.0\E_Chikitsa_Interfaces.dll
+E:\Coding\E_Chikitsa_Project\E_Chikitsa_Api\E_Chikitsa_Interfaces\obj\Debug\net6.0\refint\E_Chikitsa_Interfaces.dll
+E:\Coding\E_Chikitsa_Project\E_Chikitsa_Api\E_Chikitsa_Interfaces\obj\Debug\net6.0\E_Chikitsa_Interfaces.pdb
+E:\Coding\E_Chikitsa_Project\E_Chikitsa_Api\E_Chikitsa_Interfaces\obj\Debug\net6.0\ref\E_Chikitsa_Interfaces.dll
