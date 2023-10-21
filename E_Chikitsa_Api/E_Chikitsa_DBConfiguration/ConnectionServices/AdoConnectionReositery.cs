@@ -7,10 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Collections;
+using E_Chikitsa_Interfaces.InterfacesResources;
 
 namespace E_Chikitsa_DBConfiguration.ConnectionServices
 {
-    public class AdoConnectionConfiguration
+    public class AdoConnectionReositery : IADOConnectionRepository
     {
         private readonly AdoContext _context;
         private int _commandTimeOut = 300;
@@ -27,12 +28,13 @@ namespace E_Chikitsa_DBConfiguration.ConnectionServices
             }
         }
 
-        public AdoConnectionConfiguration(AdoContext context)
+        public AdoConnectionReositery(AdoContext context)
         {
-            this._context = context;
+            _context = context;
 
         }
-        public int ExecuteData(string spName, params SqlParameter[] sqlParams)
+
+        public int ExecuteData(string spName, params SqlParameter[] sqlParameters)
         {
             int rows = -1;
             SqlCommand cmd = null;
@@ -47,9 +49,9 @@ namespace E_Chikitsa_DBConfiguration.ConnectionServices
                 using (cmd = new SqlCommand(spName, conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    if (sqlParams != null)
+                    if (sqlParameters != null)
                     {
-                        cmd.Parameters.AddRange(sqlParams);
+                        cmd.Parameters.AddRange(sqlParameters);
                         rows = cmd.ExecuteNonQuery();
                     }
                     cmd.Parameters.Clear();
@@ -68,7 +70,8 @@ namespace E_Chikitsa_DBConfiguration.ConnectionServices
             }
             return rows;
         }
-        public DataSet GetData(string spName, params SqlParameter[] sqlParams)
+
+        public DataSet GetData(string spName, params SqlParameter[] sqlParameters)
         {
             DataSet ds;
             try
@@ -76,7 +79,7 @@ namespace E_Chikitsa_DBConfiguration.ConnectionServices
                 SqlConnection connection = _context.GetConnection();
                 SqlCommand cmd = new SqlCommand(spName, connection);
                 cmd.CommandTimeout = _commandTimeOut;
-                cmd.Parameters.AddRange(sqlParams);
+                cmd.Parameters.AddRange(sqlParameters);
                 cmd.CommandType = CommandType.StoredProcedure;
                 SqlDataAdapter ad = new SqlDataAdapter(cmd);
                 ds = new DataSet();
@@ -90,7 +93,8 @@ namespace E_Chikitsa_DBConfiguration.ConnectionServices
             }
             return ds;
         }
-        public DataTable GetDataTable(string spName, params SqlParameter[] sqlParams)
+
+        public DataTable GetDataTable(string spName, params SqlParameter[] sqlParameters)
         {
             SqlConnection connection = _context.GetConnection();
             DataTable dt = new DataTable();
@@ -98,7 +102,7 @@ namespace E_Chikitsa_DBConfiguration.ConnectionServices
             {
                 SqlCommand cmd = new SqlCommand(spName, connection);
                 cmd.CommandTimeout = _commandTimeOut;
-                cmd.Parameters.AddRange(sqlParams);
+                cmd.Parameters.AddRange(sqlParameters);
                 cmd.CommandType = CommandType.StoredProcedure;
                 connection.Open();
                 dt.Load(cmd.ExecuteReader(CommandBehavior.CloseConnection));
@@ -117,11 +121,12 @@ namespace E_Chikitsa_DBConfiguration.ConnectionServices
             }
             return dt;
         }
-        public DataTable GetDataById(string spName, params SqlParameter[] sqlParams)
+
+        public DataTable GetDataById(string spName, params SqlParameter[] sqlParameters)
         {
             try
             {
-                var res = GetData(spName, sqlParams);
+                var res = GetData(spName, sqlParameters);
                 return res?.Tables.Count > 0 ? res.Tables[0] : null;
             }
             catch
@@ -129,7 +134,8 @@ namespace E_Chikitsa_DBConfiguration.ConnectionServices
                 return null;
             }
         }
-        public string GetSingleCell(string spName, params SqlParameter[] sqlParams)
+
+        public string GetSingleCell(string spName, params SqlParameter[] sqlParameters)
         {
             string res;
             try
@@ -142,7 +148,7 @@ namespace E_Chikitsa_DBConfiguration.ConnectionServices
                 }
                 SqlCommand cmd = new SqlCommand(spName, conn);
                 cmd.CommandTimeout = _commandTimeOut;
-                cmd.Parameters.AddRange(sqlParams);
+                cmd.Parameters.AddRange(sqlParameters);
                 cmd.CommandType = CommandType.StoredProcedure;
                 res = Convert.ToString(cmd.ExecuteScalar());
                 cmd.Parameters.Clear();
@@ -158,7 +164,8 @@ namespace E_Chikitsa_DBConfiguration.ConnectionServices
             }
             return res;
         }
-        public ArrayList ExecuteDataWithOutPut(string spName, params SqlParameter[] sqlParams)
+
+        public ArrayList ExecuteDataWithOutPut(string spName, params SqlParameter[] sqlParameters)
         {
             int rows = -1;
             SqlCommand cmd = null;
@@ -175,9 +182,9 @@ namespace E_Chikitsa_DBConfiguration.ConnectionServices
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.CommandTimeout = _commandTimeOut;
-                    if (sqlParams != null)
+                    if (sqlParameters != null)
                     {
-                        cmd.Parameters.AddRange(sqlParams);
+                        cmd.Parameters.AddRange(sqlParameters);
                         cmd.ExecuteNonQuery();
                     }
                     objArrayList = new ArrayList();
@@ -202,11 +209,13 @@ namespace E_Chikitsa_DBConfiguration.ConnectionServices
             }
             return objArrayList;
         }
-        public async Task ExecuteStoreProcedureAsync(string storeProcedureName, SqlParameter[] parameters)
+
+        public Task ExecuteStoreProcedureAsync(string spName, SqlParameter[] parameters)
         {
             throw new NotImplementedException();
         }
-        public async Task ExecuteStoreProcedureAsync(string storeProcedureName, SqlParameter[] parameters, string connectionString)
+
+        public async Task ExecuteStoreProcedureAsync(string spName, SqlParameter[] parameters, string connnectionString)
         {
             try
             {
@@ -225,7 +234,8 @@ namespace E_Chikitsa_DBConfiguration.ConnectionServices
                 throw;
             }
         }
-        public async Task<List<T>> ExecuteStoreProcedureReturnListObjectAsync<T>(string storeProcedureName, SqlParameter[] parameters)
+
+        public async Task<List<T>> ExecuteStoreProcedureReturnListObjectAsync<T>(string storeprocedure, SqlParameter[] parameters)
         {
             try
             {
@@ -233,7 +243,7 @@ namespace E_Chikitsa_DBConfiguration.ConnectionServices
                 using (SqlConnection cn = _context.GetConnection())
                 {
                     await cn.OpenAsync();
-                    using (SqlCommand cmd = new SqlCommand(storeProcedureName, cn))
+                    using (SqlCommand cmd = new SqlCommand(storeprocedure, cn))
                     {
                         if (_commandTimeOut != -1) cmd.CommandTimeout = _commandTimeOut;
                         cmd.CommandType = System.Data.CommandType.StoredProcedure;
@@ -249,7 +259,8 @@ namespace E_Chikitsa_DBConfiguration.ConnectionServices
                 throw;
             }
         }
-        public async Task<T> ExecuteStoreProcedureAndReturnObjectAsync<T>(string storeProcedureName, SqlParameter[] parameters)
+
+        public async Task<T> ExecuteStoreProcedureAndReturnObjectAsync<T>(string storeProcedure, SqlParameter[] parameters)
         {
             try
             {
@@ -257,7 +268,7 @@ namespace E_Chikitsa_DBConfiguration.ConnectionServices
                 using (SqlConnection cn = new SqlConnection(_connectionString))
                 {
                     await cn.OpenAsync();
-                    using (SqlCommand cmd = new SqlCommand(storeProcedureName, cn))
+                    using (SqlCommand cmd = new SqlCommand(storeProcedure, cn))
                     {
                         if (_commandTimeOut != -1) cmd.CommandTimeout = _commandTimeOut;
                         cmd.CommandType = System.Data.CommandType.StoredProcedure;
@@ -273,7 +284,8 @@ namespace E_Chikitsa_DBConfiguration.ConnectionServices
                 throw;
             }
         }
-        public async Task<DataTable> ExecuteStoreProcedureAndReturnDataTableAsync<T>(string storeProcedureName, SqlParameter[] parameters)
+
+        public Task<DataTable> DataTableExecuteStoreProcedureAndReturnDataTableObjectAsync<T>(string storeProcedure, SqlParameter[] parameters)
         {
             throw new NotImplementedException();
         }
