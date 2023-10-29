@@ -94,7 +94,7 @@ namespace E_Chikitsa_DBConfiguration.ConnectionServices
             return ds;
         }
 
-        public DataTable GetDataTable(string spName, params SqlParameter[] sqlParameters)
+        public  DataTable GetDataTable(string spName, params SqlParameter[] sqlParameters)
         {
             SqlConnection connection = _context.GetConnection();
             DataTable dt = new DataTable();

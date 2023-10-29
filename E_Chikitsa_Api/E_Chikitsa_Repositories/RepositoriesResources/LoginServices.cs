@@ -24,32 +24,17 @@ namespace E_Chikitsa_Repositories.RepositoriesResources
 
         }
 
-        public  async Task<UserLoginDetailModel> GetUsersLogin(UserLoginModel userLoginModel)
+        public async Task<UserLoginDetailModel> GetUsersLogin(UserLoginModel userLoginModel)
         {
             SqlParameter[] p =
             {
-                new SqlParameter(SqlParameterConstrains.TRANSTYPE,"I"),
-                new SqlParameter(SqlParameterConstrains.VNO,2),
-                new SqlParameter(SqlParameterConstrains.USERNAME,"abc"),
-                new SqlParameter(SqlParameterConstrains.PASSWORD ,"abc"),
-                new SqlParameter(SqlParameterConstrains.ISDOC,2),
-                new SqlParameter(SqlParameterConstrains.DOCID,5),
-                new SqlParameter(SqlParameterConstrains.ENABLEDUPPRINT,5),
-                new SqlParameter(SqlParameterConstrains.ENABLESHIFT,5),
-                new SqlParameter(SqlParameterConstrains.USERDEPT,"I"),
-                new SqlParameter(SqlParameterConstrains.USERPERMISSION,"s"),
-                new SqlParameter(SqlParameterConstrains.ISDEACTIVE,1),
-                new SqlParameter(SqlParameterConstrains.UNAME,"I"),
-                new SqlParameter(SqlParameterConstrains.COMPUNAME,"I"),
-                new SqlParameter(SqlParameterConstrains.PERDETAIL,"I"),
-                new SqlParameter(SqlParameterConstrains.USRPRDCATFLAG,1),
-                new SqlParameter(SqlParameterConstrains.USRPRDCATID,1),
-                new SqlParameter(SqlParameterConstrains.ISWARD,1),
-                new SqlParameter(SqlParameterConstrains.WARDID,1)
+                new SqlParameter(SqlParameterConstrains.USERNAME,userLoginModel.UserName)
             };
 
-            var ds =  _adoDBContext.GetDataTable(StoreProcedureConstarins.SPMANAGEUSER, p);
-            var res = ds?.ConvertDataTable<UserLoginDetailModel>();
+
+            var ds = _adoDBContext.GetDataTable(StoreProcedureConstarins.SPGETUSERDETAILONLINE, p);
+            if (ds == null) return null;
+            var res = ds.ConvertDataTable<UserLoginDetailModel>();
             return res.FirstOrDefault();
         }
     }

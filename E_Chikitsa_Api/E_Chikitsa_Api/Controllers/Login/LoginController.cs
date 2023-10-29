@@ -30,6 +30,7 @@ namespace E_Chikitsa_Api.Controllers.Login
             if (ModelState.IsValid)
             {
                 var res = await _loginInterface.GetUsersLogin(userLogin);
+
                 if (res != null)
                 {
                     userLoginDetailModel.Result = ResponseConstrains.RESULT_SUCCESS;
@@ -37,11 +38,12 @@ namespace E_Chikitsa_Api.Controllers.Login
                     userLoginDetailModel.Data = res;
                     userLoginDetailModel.StatusCode = (int)HttpStatusCode.OK;
                 }
+
             }
 
-                return Ok(userLoginDetailModel);
-            }
-
-
+            return Ok(userLoginDetailModel);
         }
+
+
     }
+}

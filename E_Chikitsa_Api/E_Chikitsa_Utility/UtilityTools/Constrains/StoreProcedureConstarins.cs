@@ -8,6 +8,6 @@ namespace E_Chikitsa_Utility.UtilityTools.Constrains
 {
     public class StoreProcedureConstarins
     {
-        public const string SPMANAGEUSER = "spManageUser";
+        public const string SPGETUSERDETAILONLINE = "spGetUserDetailOnline";
     }
 }

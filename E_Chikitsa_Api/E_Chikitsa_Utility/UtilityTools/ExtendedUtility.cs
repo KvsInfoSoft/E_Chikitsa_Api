@@ -37,7 +37,7 @@ namespace E_Chikitsa_Utility.UtilityTools
                         {
                             if (pro.PropertyType.FullName.Contains(dr.Table.Columns[column.ColumnName].DataType.FullName, StringComparison.InvariantCultureIgnoreCase))
                             {
-                                pro.SetValue(obj, dr[column.ColumnName] == DBNull.Value ? null : dr[column.ColumnName]);
+                                pro.SetValue(obj, dr[column.ColumnName] == DBNull.Value ? null : dr[column.ColumnName], null);
                             }
                             else if (pro.PropertyType.FullName.Contains("bool", StringComparison.InvariantCultureIgnoreCase))
                             {

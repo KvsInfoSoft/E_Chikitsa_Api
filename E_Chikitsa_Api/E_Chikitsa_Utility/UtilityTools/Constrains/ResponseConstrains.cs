@@ -15,6 +15,10 @@ namespace E_Chikitsa_Utility.UtilityTools.Constrains
         public const string MSG_DELETE = "Records deleted successfully.";
         public const string MSG_DUPLICATE = "Records already exists.";
         public const string MSG_NO_DATA_FOUND = "No data found.";
+        public const string UNAUTHORIZED = "unauthorized";
+        public const string REQUIREDTOKENKEY = "requiredtokenkey";
+
+        
 
     }
 }
