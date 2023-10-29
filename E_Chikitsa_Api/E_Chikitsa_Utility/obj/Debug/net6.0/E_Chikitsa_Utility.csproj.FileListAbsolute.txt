@@ -10,3 +10,15 @@ E:\Coding\E_Chikitsa_Project\E_Chikitsa_Api\E_Chikitsa_Utility\obj\Debug\net6.0\
 E:\Coding\E_Chikitsa_Project\E_Chikitsa_Api\E_Chikitsa_Utility\obj\Debug\net6.0\refint\E_Chikitsa_Utility.dll
 E:\Coding\E_Chikitsa_Project\E_Chikitsa_Api\E_Chikitsa_Utility\obj\Debug\net6.0\E_Chikitsa_Utility.pdb
 E:\Coding\E_Chikitsa_Project\E_Chikitsa_Api\E_Chikitsa_Utility\obj\Debug\net6.0\ref\E_Chikitsa_Utility.dll
+E:\Coding\E_Chikitsa_Projects\E_Chikitsa_Api\E_Chikitsa_Utility\bin\Debug\net6.0\E_Chikitsa_Utility.deps.json
+E:\Coding\E_Chikitsa_Projects\E_Chikitsa_Api\E_Chikitsa_Utility\bin\Debug\net6.0\E_Chikitsa_Utility.dll
+E:\Coding\E_Chikitsa_Projects\E_Chikitsa_Api\E_Chikitsa_Utility\bin\Debug\net6.0\E_Chikitsa_Utility.pdb
+E:\Coding\E_Chikitsa_Projects\E_Chikitsa_Api\E_Chikitsa_Utility\obj\Debug\net6.0\E_Chikitsa_Utility.csproj.AssemblyReference.cache
+E:\Coding\E_Chikitsa_Projects\E_Chikitsa_Api\E_Chikitsa_Utility\obj\Debug\net6.0\E_Chikitsa_Utility.GeneratedMSBuildEditorConfig.editorconfig
+E:\Coding\E_Chikitsa_Projects\E_Chikitsa_Api\E_Chikitsa_Utility\obj\Debug\net6.0\E_Chikitsa_Utility.AssemblyInfoInputs.cache
+E:\Coding\E_Chikitsa_Projects\E_Chikitsa_Api\E_Chikitsa_Utility\obj\Debug\net6.0\E_Chikitsa_Utility.AssemblyInfo.cs
+E:\Coding\E_Chikitsa_Projects\E_Chikitsa_Api\E_Chikitsa_Utility\obj\Debug\net6.0\E_Chikitsa_Utility.csproj.CoreCompileInputs.cache
+E:\Coding\E_Chikitsa_Projects\E_Chikitsa_Api\E_Chikitsa_Utility\obj\Debug\net6.0\E_Chikitsa_Utility.dll
+E:\Coding\E_Chikitsa_Projects\E_Chikitsa_Api\E_Chikitsa_Utility\obj\Debug\net6.0\refint\E_Chikitsa_Utility.dll
+E:\Coding\E_Chikitsa_Projects\E_Chikitsa_Api\E_Chikitsa_Utility\obj\Debug\net6.0\E_Chikitsa_Utility.pdb
+E:\Coding\E_Chikitsa_Projects\E_Chikitsa_Api\E_Chikitsa_Utility\obj\Debug\net6.0\ref\E_Chikitsa_Utility.dll

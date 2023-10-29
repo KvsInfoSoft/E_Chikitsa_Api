@@ -9,12 +9,25 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis.Workspaces.Common" Version="4.7.0" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.17.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="Serilog.AspNetCore" Version="7.0.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\E_Chikitsa_DBConfiguration\E_Chikitsa_DBConfiguration.csproj" />
+    <ProjectReference Include="..\E_Chikitsa_Interfaces\E_Chikitsa_Interfaces.csproj" />
+    <ProjectReference Include="..\E_Chikitsa_Repositories\E_Chikitsa_Repositories.csproj" />
+    <ProjectReference Include="..\E_Chikitsa_Utility\E_Chikitsa_Utility.csproj" />
+    <ProjectReference Include="..\E_Chikitsa_ViewModels\E_Chikitsa_ViewModels.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="CypherUtility">
+      <HintPath>..\..\CypherUtility\bin\Debug\CypherUtility.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

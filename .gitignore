@@ -70,6 +70,23 @@ ScaffoldingReadMe.txt
 StyleCopReport.xml
 
 # Files built by Visual Studio
+*.cache
+*.dll
+*.exe
+*.pdb
+/build/
+*.suo
+*.user
+_ReSharper.*/
+*.sdf
+*.opensdf
+*.tlog
+*.log
+TestResult.xml
+*.VisualState.xml
+Version.cs
+Version.h
+Version.cpp
 *_i.c
 *_p.c
 *_h.h
@@ -97,6 +114,14 @@ StyleCopReport.xml
 *.pidb
 *.svclog
 *.scc
+ *.pdb 
+*.bak 
+*.dll
+*.lib 
+.gitignore
+packages/ 
+*/bin/
+*/obj/ 
 
 # Chutzpah Test files
 _Chutzpah*

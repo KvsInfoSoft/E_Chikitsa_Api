@@ -14,11 +14,13 @@ namespace E_Chikitsa_Api.Configuration
 
             if(RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
             {
-                connectionE_Chikitsa = configuration.GetConnectionString("E_ChikitsaDbConnStr");
+               
                 connectionE_Chikitsalocal = configuration.GetConnectionString("E_ChikitsaDbConnStrlocal");
+                connectionE_Chikitsa = configuration.GetConnectionString("E_ChikitsaDbConnStr");
             }
-            services.AddSingleton(new E_ChikitsaDbInfo(connectionE_Chikitsa));
             services.AddSingleton(new E_ChikitsaDbInfo(connectionE_Chikitsalocal));
+            services.AddSingleton(new E_ChikitsaDbInfo(connectionE_Chikitsa));
+            
 
             return services;
         }

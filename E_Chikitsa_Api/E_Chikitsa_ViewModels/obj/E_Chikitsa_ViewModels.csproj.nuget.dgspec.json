@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Coding\\E_Chikitsa_Project\\E_Chikitsa_Api\\E_Chikitsa_ViewModels\\E_Chikitsa_ViewModels.csproj": {}
+    "E:\\Coding\\E_Chikitsa_Projects\\E_Chikitsa_Api\\E_Chikitsa_ViewModels\\E_Chikitsa_ViewModels.csproj": {}
   },
   "projects": {
-    "E:\\Coding\\E_Chikitsa_Project\\E_Chikitsa_Api\\E_Chikitsa_ViewModels\\E_Chikitsa_ViewModels.csproj": {
+    "E:\\Coding\\E_Chikitsa_Projects\\E_Chikitsa_Api\\E_Chikitsa_ViewModels\\E_Chikitsa_ViewModels.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Coding\\E_Chikitsa_Project\\E_Chikitsa_Api\\E_Chikitsa_ViewModels\\E_Chikitsa_ViewModels.csproj",
+        "projectUniqueName": "E:\\Coding\\E_Chikitsa_Projects\\E_Chikitsa_Api\\E_Chikitsa_ViewModels\\E_Chikitsa_ViewModels.csproj",
         "projectName": "E_Chikitsa_ViewModels",
-        "projectPath": "E:\\Coding\\E_Chikitsa_Project\\E_Chikitsa_Api\\E_Chikitsa_ViewModels\\E_Chikitsa_ViewModels.csproj",
+        "projectPath": "E:\\Coding\\E_Chikitsa_Projects\\E_Chikitsa_Api\\E_Chikitsa_ViewModels\\E_Chikitsa_ViewModels.csproj",
         "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
-        "outputPath": "E:\\Coding\\E_Chikitsa_Project\\E_Chikitsa_Api\\E_Chikitsa_ViewModels\\obj\\",
+        "outputPath": "E:\\Coding\\E_Chikitsa_Projects\\E_Chikitsa_Api\\E_Chikitsa_ViewModels\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,6 +39,12 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "Serilog.AspNetCore": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

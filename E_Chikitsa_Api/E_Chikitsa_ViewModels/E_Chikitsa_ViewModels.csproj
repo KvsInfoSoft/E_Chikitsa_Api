@@ -10,4 +10,8 @@
     <Folder Include="ResponseModel\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Serilog.AspNetCore" Version="7.0.0" />
+  </ItemGroup>
+
 </Project>
