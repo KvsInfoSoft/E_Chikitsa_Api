@@ -1,4 +1,5 @@
-﻿using E_Chikitsa_Interfaces.InterfacesResources;
+﻿using CypherUtility;
+using E_Chikitsa_Interfaces.InterfacesResources;
 using E_Chikitsa_Utility.UtilityTools.APIResponse;
 using E_Chikitsa_Utility.UtilityTools.Constrains;
 using E_Chikitsa_ViewModels.RequestModel;
@@ -21,8 +22,8 @@ namespace E_Chikitsa_Api.Controllers.Login
         }
         #endregion
 
+        #region Login
         [HttpPost("UserLogin")]
-
         public async Task<IActionResult> GetUserLogin(UserLoginModel userLogin)
         {
             SingleResponse<UserLoginDetailModel> userLoginDetailModel = new SingleResponse<UserLoginDetailModel>();
@@ -30,12 +31,21 @@ namespace E_Chikitsa_Api.Controllers.Login
             if (ModelState.IsValid)
             {
                 var res = await _loginInterface.GetUsersLogin(userLogin);
-
-                if (res != null)
+                if (userLogin.UserName == res.UserName && userLogin.Password == Cypher.Decrypt(res.Password))
                 {
-                    userLoginDetailModel.Result = ResponseConstrains.RESULT_SUCCESS;
-                    userLoginDetailModel.Message = ResponseConstrains.MSG_SUCCESS;
-                    userLoginDetailModel.Data = res;
+                    //ToDo: Logic for Url Redirection related
+                    if (res != null)
+                    {
+                        userLoginDetailModel.Result = ResponseConstrains.RESULT_SUCCESS;
+                        userLoginDetailModel.Message = ResponseConstrains.MSG_SUCCESS;
+                        userLoginDetailModel.Data = res;
+                        userLoginDetailModel.StatusCode = (int)HttpStatusCode.OK;
+                    }
+                }
+                else
+                {
+                    userLoginDetailModel.Result = ResponseConstrains.RESULT_FAIL;
+                    userLoginDetailModel.Message = ResponseConstrains.UNAUTHORIZED;
                     userLoginDetailModel.StatusCode = (int)HttpStatusCode.OK;
                 }
 
@@ -43,6 +53,20 @@ namespace E_Chikitsa_Api.Controllers.Login
 
             return Ok(userLoginDetailModel);
         }
+        #endregion
+
+
+        #region UserRegistration
+
+        [HttpPost("UserRegistration")]
+        public async Task<IActionResult> UserRegistration()
+        {
+
+            return Ok();
+        } 
+        #endregion
+
+
 
 
     }

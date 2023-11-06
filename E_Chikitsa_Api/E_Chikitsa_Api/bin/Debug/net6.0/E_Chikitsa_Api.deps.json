@@ -17,7 +17,8 @@
           "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": "1.17.0",
           "Newtonsoft.Json": "13.0.3",
           "Serilog.AspNetCore": "7.0.0",
-          "Swashbuckle.AspNetCore": "6.2.3"
+          "Swashbuckle.AspNetCore": "6.2.3",
+          "CypherUtility": "1.0.0.0"
         },
         "runtime": {
           "E_Chikitsa_Api.dll": {}
@@ -692,6 +693,14 @@
         "runtime": {
           "E_Chikitsa_ViewModels.dll": {}
         }
+      },
+      "CypherUtility/1.0.0.0": {
+        "runtime": {
+          "CypherUtility.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
       }
     }
   },
@@ -1108,6 +1117,11 @@
     },
     "E_Chikitsa_ViewModels/1.0.0": {
       "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CypherUtility/1.0.0.0": {
+      "type": "reference",
       "serviceable": false,
       "sha512": ""
     }

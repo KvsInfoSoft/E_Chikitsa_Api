@@ -17,25 +17,30 @@ namespace E_Chikitsa_Repositories.RepositoriesResources
 {
     public class LoginServices : ILoginInterface
     {
+        #region Varibles
         private readonly AdoConnectionReositery _adoDBContext;
+        #endregion
+
+        #region Constructor
         public LoginServices(E_ChikitsaDbInfo dbInfo)
         {
             _adoDBContext = new AdoConnectionReositery(new AdoContext(dbInfo.ConnectionString));
 
         }
+        #endregion
 
+        #region GetUsersLogin
         public async Task<UserLoginDetailModel> GetUsersLogin(UserLoginModel userLoginModel)
         {
             SqlParameter[] p =
             {
                 new SqlParameter(SqlParameterConstrains.USERNAME,userLoginModel.UserName)
             };
-
-
             var ds = _adoDBContext.GetDataTable(StoreProcedureConstarins.SPGETUSERDETAILONLINE, p);
             if (ds == null) return null;
             var res = ds.ConvertDataTable<UserLoginDetailModel>();
             return res.FirstOrDefault();
-        }
+        } 
+        #endregion
     }
 }
